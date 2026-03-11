@@ -1,28 +1,24 @@
 {
   "name": "wolog",
   "private": true,
-  "version": "0.1.0",
-  "type": "module",
+  "version": "0.2.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "pnpm -r --parallel run dev",
+    "dev:main": "pnpm --filter @wolog/main-app dev",
+    "dev:timeline": "pnpm --filter @wolog/app-timeline dev",
+    "dev:auth": "pnpm --filter @wolog/app-auth dev",
+    "dev:server": "pnpm --filter @wolog/server dev",
+    "dev:frontend": "pnpm --filter @wolog/main-app --filter @wolog/app-auth --filter @wolog/app-timeline --parallel run dev",
+    "build": "pnpm -r run build",
+    "typecheck": "pnpm -r run typecheck"
   },
-  "dependencies": {
-    "dexie": "^4.3.0",
-    "pinia": "^3.0.4",
-    "ulid": "^3.0.2",
-    "vue": "^3.5.25",
-    "vue-router": "^4.6.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/vite": "^4.2.1",
-    "@types/node": "^24.10.1",
-    "@vitejs/plugin-vue": "^6.0.2",
-    "@vue/tsconfig": "^0.8.1",
-    "tailwindcss": "^4.2.1",
-    "typescript": "~5.9.3",
-    "vite": "^7.3.1",
-    "vue-tsc": "^3.1.5"
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@nestjs/core",
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "prisma"
+    ]
   }
 }

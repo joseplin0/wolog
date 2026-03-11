@@ -1,0 +1,21 @@
+{
+  "name": "@wolog/auth-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@wolog/types": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vue-router": "^4.6.4"
+  }
+}
