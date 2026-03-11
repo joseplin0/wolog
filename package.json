@@ -9,6 +9,8 @@
     "dev:auth": "pnpm --filter @wolog/app-auth dev",
     "dev:server": "pnpm --filter @wolog/server dev",
     "dev:frontend": "pnpm --filter @wolog/main-app --filter @wolog/app-auth --filter @wolog/app-timeline --parallel run dev",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
     "build": "pnpm -r run build",
     "typecheck": "pnpm -r run typecheck"
   },
@@ -20,5 +22,9 @@
       "esbuild",
       "prisma"
     ]
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.30"
   }
 }
